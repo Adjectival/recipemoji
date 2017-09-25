@@ -1,0 +1,38 @@
+<header style="background:papayawhip;">
+<div style="text-align:center">
+  <h6>
+    Intended for Educational Purposes Only: all IP Nexon&copy; &amp; NexonGT&copy;
+  </h6>
+  <h6>
+    <img src="../assets/fwticon_r.png" class="header_icon" />
+    <img src="../assets/fwticon_p.png" class="header_icon" />
+    <img src="../assets/fwticon_s.png" class="header_icon" />
+    <img src="../assets/fwticon_a.png" class="header_icon" />
+    <img src="../assets/fwticon_t.png" class="header_icon" />
+    <img src="../assets/fwticon_b.png" class="header_icon" />
+    <img src="../assets/fwticon_d.png" class="header_icon" />
+    <img src="../assets/fwticon_o.png" class="header_icon" />
+  </h6>
+  <h1>{{title}}</h1>
+  <h2>{{instructions}}</h2>
+</div>
+</header>
+
+  <app-edit-hero [childSelectedHero]="selectedHero" (doneClickedSender)="finishedEditing()">
+  </app-edit-hero>
+
+  <app-hero-list style="text-align:center"
+    [childHeroList]="masterHeroList"
+    (clickSender)="showDetails($event)"
+  >
+    
+  </app-hero-list>
+  <app-new-hero
+    (newHeroSender)="addHero($event)"
+  >
+  </app-new-hero>
+
+
+<footer>
+  <h5 class="credit mt-2" style="text-align:center"><a target="_blank" href="https://alexanderjacks.com">Alexander Jacks Consulting</a></h5>
+</footer>

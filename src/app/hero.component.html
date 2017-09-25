@@ -1,0 +1,12 @@
+<div class="pt-2 pb-0">
+  <img src={{hero.imgurl}}
+    *ngIf="hero.party === true" (click)="toggleParty(false)"
+    (change)="onChange($event.target.value)" class="btn filter p-0 small-img"
+  />
+  <img src={{hero.imgurl}}
+    *ngIf="hero.party === false" (click)="toggleParty(true)"
+    (change)="onChange($event.target.value)" class="btn filter p-0 framed-img"
+  />
+  <label class="d-inline id-tag">#{{ hero.id }}</label>
+  <p><label class="d-inline name-tag">{{ hero.name }}</label></p>
+</div>

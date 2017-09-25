@@ -1,0 +1,52 @@
+<h1>Recruit New Hero! Theoretically. WIP <i class="em em-construction"></i></h1>
+<div>
+  <label>Enter Hero Id:</label><input #newId>
+</div>
+<div>
+  <label>Enter Hero Name:</label><input #newName>
+</div>
+<div>
+  <label>Enter Hero Img URL:</label><input #newImgurl>
+</div>
+<div>
+  <label>Select Property:</label>
+    <select #newProperty>
+      <option value="Rock">Rock</option>
+      <option value="Scissors" selected="selected">Scissors</option>
+      <option value="Paper">Paper</option>
+    </select>
+</div>
+<div>
+  <label>Select Type:</label>
+    <select #newType>
+      <option value="AreaAttack">AreaAttack</option>
+      <option value="Attack">Attack</option>
+      <option value="Balance" selected="selected">Balance</option>
+      <option value="Defense">Defense</option>
+      <option value="Support">Support</option>
+    </select>
+</div>
+<div>
+  <label>Select Terrain:</label>
+    <select #newTerr1>
+      <option value="Grass">Grass</option>
+      <option value="Thornbush">Thornbush</option>
+      <option value="Water" selected="selected">Water</option>
+      <option value="Swamp">Swamp</option>
+      <option value="Poison">Poison</option>
+      <option value="Lava">Lava</option>
+      <option value="Glacier">Glacier</option>
+    </select>
+</div>
+<div>
+  <button class="btn btn-lg btn-success"
+    (click)="
+        addClicked(newName.value, newProperty.value, newType.value, newTerr1.value, newImgurl.value, newId.value);
+        newName.value='';
+        newProperty.value='';
+        newType.value='';
+        newTerr1.value='';
+        newImgurl.value='';
+        newId.value='';
+      ">Add</button>
+</div>

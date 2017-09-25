@@ -1,0 +1,76 @@
+<div class="navbar sticky-top my-0">
+  <div class="testzone row my-0">
+    <div *ngFor="let currentHero of childHeroList" class="party-hero my-0">
+      <span *ngIf="currentHero.party==true">
+          <app-hero [hero]="currentHero" class="col"></app-hero>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <select 
+      (change)="propertyChange($event.target.value)" class="btn col btn-lg btn-primary filter">
+        <option value="all" selected="selected">All Properties</option>
+        <option value="Rock">Rock</option>
+        <option value="Scissors">Scissors</option>
+        <option value="Paper">Paper</option>
+    </select>
+    
+    <select 
+      (change)="typeChange($event.target.value)" class="btn col btn-lg btn-danger filter">
+      <option value="all" selected="selected">All Types</option>
+      <option value="AreaAttack">AreaAttack</option>
+      <option value="Attack">Attack</option>
+      <option value="Balance">Balance</option>
+      <option value="Defense">Defense</option>
+      <option value="Support">Support</option>
+    </select>
+    
+    <select 
+      (change)="terr1Change($event.target.value)" class="btn col btn-lg btn-success filter">
+      <option value="all" selected="selected">All Terrain</option>
+      <option value="Grass">Grass</option>
+      <option value="Thornbush">Thornbush</option>
+      <option value="Water">Water</option>
+      <option value="Swamp">Swamp</option>
+      <option value="Poison">Poison</option>
+      <option value="Lava">Lava</option>
+      <option value="Glacier">Glacier</option>
+    </select>
+    
+  </div>
+</div>
+
+<div *ngFor="let currentHero of childHeroList | property:selectedProperty | type:selectedType | terr1:selectedTerr1">
+<div *ngIf="currentHero.party==false">
+
+  <div class="card flex-row">
+    
+    <app-hero [hero]="currentHero" class="col align-self-center"></app-hero>
+
+    <div class="col align-self-center">
+      <h4 class="list-group-item bg-primary">
+        <img src="../assets/fwticon_r.png" *ngIf="currentHero.property === 'Rock'" />
+        <img src="../assets/fwticon_s.png" *ngIf="currentHero.property === 'Scissors'" />
+        <img src="../assets/fwticon_p.png" *ngIf="currentHero.property === 'Paper'" />
+      : {{currentHero.property}}</h4>
+      <h4 class="list-group-item bg-danger">
+        <img src="../assets/fwticon_a.png" *ngIf="currentHero.type === 'AreaAttack'" />
+        <img src="../assets/fwticon_t.png" *ngIf="currentHero.type === 'Attack'" />
+        <img src="../assets/fwticon_b.png" *ngIf="currentHero.type === 'Balance'" />
+        <img src="../assets/fwticon_d.png" *ngIf="currentHero.type === 'Defense'" />
+        <img src="../assets/fwticon_o.png" *ngIf="currentHero.type === 'Support'" />
+      : {{currentHero.type}}</h4>
+      <h4 class="list-group-item bg-success">
+        <img src="../assets/icon_Grass.png" *ngIf="currentHero.terr1 === 'Grass'" />
+        <img src="../assets/icon_Thornbush.png" *ngIf="currentHero.terr1 === 'Thornbush'" />
+        <img src="../assets/icon_Water.png" *ngIf="currentHero.terr1 === 'Water'" />
+        <img src="../assets/icon_Swamp.png" *ngIf="currentHero.terr1 === 'Swamp'" />
+        <img src="../assets/icon_Poison.png" *ngIf="currentHero.terr1 === 'Poison'" />
+        <img src="../assets/icon_Lava.png" *ngIf="currentHero.terr1 === 'Lava'" />
+        <img src="../assets/icon_Glacier.png" *ngIf="currentHero.terr1 === 'Glacier'" /> : {{currentHero.terr1}}</h4>
+    </div>
+
+  </div>
+
+</div>
+</div>
